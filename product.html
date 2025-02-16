@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+
+    <style>
+        .card-img-top {
+            height: 40vh;
+        }
+
+        #beranda {
+            background-image: url("images/about-background.jpg");
+            opacity: 0.5;
+        }
+
+        body {
+            background: -webkit-gradient(linear, left top, left bottom, from(#f0f806), to(#00a8fc)) fixed;
+        }
+
+        .card {
+            box-shadow: 5px 5px 5px #c9e511;
+        }
+
+        .pill-style {
+            font-weight: bold;
+            font-size: 1.3vw;
+        }
+
+        .pill-style:hover {
+            background-color: rgba(255, 255, 255, 0.303) !important;
+        }
+
+        .pill-style:focus {
+            background-color: rgba(219, 238, 72, 0.853) !important;
+            color: rgb(96, 96, 216) !important;
+
+        }
+
+        #caption {
+            text-shadow: -2px -2px 0 rgb(22, 22, 40), 2px -2px 0 rgb(151, 151, 225), -2px 2px 0 black, 2px 2px 0 rgb(151, 151, 225);
+        }
+
+        h1 {
+            color: white;
+            text-shadow: 1px 1px 2px red, 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="nav-layout">
+
+    </div>
+    <script src="nav_layout.js"></script>
+
+    <div class="bg-primary text-white text-center py-5 rounded-pill mx-auto" style="width: 90vw;" id="beranda">
+        <div class="container" style="font-weight: bold;" id="caption">
+            <h1 class="display-4">Our Product</h1><br>
+            <p><i>Enjoy Shopping</i></p>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="d-flex justify-content-center mb-4">
+            <ul class="nav nav-pills">
+                <li class="nav-item mx-1">
+                    <button
+                        class="nav-link active text-center py-2 stroke text-white border rounded-pill border-warning bg-dark bg-opacity-10 pill-style"
+                        data-bs-toggle="pill" data-category="all" onclick="categoryFuntion('all')">All</button>
+                </li>
+                <li class="nav-item mx-1">
+                    <button
+                        class="nav-link text-center py-2 stroke text-white border rounded-pill border-warning bg-dark bg-opacity-25 pill-style"
+                        data-bs-toggle="pill" data-category="category1"
+                        onclick="categoryFuntion('laptop')">Laptop</button>
+                </li>
+                <li class="nav-item mx-1">
+                    <button
+                        class="nav-link text-center py-2 stroke text-white border rounded-pill border-warning bg-dark bg-opacity-25 pill-style"
+                        data-bs-toggle="pill" data-category="category2"
+                        onclick="categoryFuntion('smartphone')">Smartphone</button>
+                </li>
+                <li class="nav-item mx-1">
+                    <button
+                        class="nav-link text-center py-2 stroke text-white border rounded-pill border-warning bg-dark bg-opacity-25 pill-style"
+                        data-bs-toggle="pill" data-category="category3"
+                        onclick="categoryFuntion('speaker')">Speaker</button>
+                </li>
+                <li class="nav-item mx-1">
+                    <button
+                        class="nav-link text-center py-2 stroke text-white border rounded-pill border-warning bg-dark bg-opacity-25 pill-style"
+                        data-bs-toggle="pill" data-category="category3"
+                        onclick="categoryFuntion('headset')">Headset</button>
+                </li>
+            </ul>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="productList">
+
+        </div>
+    </div>
+
+    <div id="footer-layout"></div>
+    <script src="footer-layout.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="productlist.js"></script>
+
+    <script>
+        categoryFuntion('all');
+        function categoryFuntion(categoryId) {
+            get_productList = document.getElementById('productList');
+            productList_html = ``;
+            for (let i = 0; i < product.length; i++) {
+                if (categoryId === product[i]['category'] || categoryId === 'all') {
+                    productList_html += `
+                        <div class="col">
+                    <div class="card h-100 bg-white rounded" style="opacity:0.85">
+                        <img src="${product[i]['image'][0]}" class="card-img-top"  alt="產品圖遍">
+                        <div class="card-body">
+                            <h5 class="card-title">${product[i]['productName']}</h5>
+                            <p class="card-text">${descriptionFunction(product, i)}</p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <a href="productpage.html?id=${product[i]['id']}">
+                            <button class="btn btn-primary">Buy Now</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                    `;
+                }
+                get_productList.innerHTML = productList_html;
+            }
+        }
+
+        function descriptionFunction(data, index) {
+            let isi = "";
+            if (data[index]["description"] == null) {
+                isi = "No Description";
+                return isi;
+            }
+            if ((data[index]["description"].length) > 100) {
+                isi = data[index]["description"].substring(100, 0) + "[..]";
+                return isi;
+            }
+            else {
+                isi = data[index]["description"];
+                return isi;
+            }
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>

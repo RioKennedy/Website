@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>最新消息</title>
+
+  <!-- 引入 Bootstrap 5 的 CSS -->
+  <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+
+  <style type="text/css">
+    .carousel-item img {
+      aspect-ratio: 2/1;
+      /*圖片比例:2:1*/
+      object-fit: cover;
+      height: 700px;
+      /* 調整此高度 */
+    }
+
+    .card {
+      box-shadow: 5px 5px 5px #c9e511;
+    }
+
+    .card-container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+
+    }
+
+    #beranda {
+      background-image: url("images/about-background.jpg");
+      opacity: 0.5;
+    }
+
+    body {
+      background: -webkit-gradient(linear, left top, left bottom, from(#f0f806), to(#00a8fc)) fixed;
+    }
+
+    .img-thumbnail {
+      width: 100px;
+      height: 100px;
+      padding: 1px;
+      background-color: rgb(242, 127, 127);
+    }
+
+    .card-img-top {
+      height: 20vh;
+    }
+
+    #main-image {
+      width: 50vw;
+      height: 40vh;
+    }
+
+
+    .zoom:hover {
+      transform: scale(1.3);
+    }
+
+    #main-image {
+      position: relative;
+    }
+
+    #main-image-container {
+      position: relative;
+    }
+
+    .img-magnifier-glass {
+      position: absolute;
+      border: 3px solid #000;
+      border-radius: 50%;
+      cursor: none;
+      /*Set the size of the magnifier glass:*/
+      width: 100px;
+      height: 100px;
+      z-index: 2;
+    }
+
+    #caption {
+      text-shadow: -2px -2px 0 rgb(22, 22, 40), 2px -2px 0 rgb(151, 151, 225), -2px 2px 0 black, 2px 2px 0 rgb(151, 151, 225);
+    }
+
+    h1 {
+      color: white;
+      text-shadow: 1px 1px 2px red, 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="nav-layout">
+
+  </div>
+  <script src="nav_layout.js"></script>
+
+  <div class="bg-primary text-white text-center py-5 rounded-pill mx-auto" style="width: 90vw;" id="beranda">
+    <div class="container" style="font-weight: bold;" id="caption">
+      <h1 class="display-4">Product Detail</h1><br>
+    </div>
+  </div>
+
+
+  <div class="container my-5">
+    <!-- 商品區塊 -->
+    <div id="productDetail">
+
+    </div>
+
+    <!-- 相關商品區 -->
+    <div class="mt-5">
+      <h1 style="font-size: 25px; text-decoration: underline; color: whitesmoke;">相關商品推薦</h3>
+        <div class="row" id="related_container">
+
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- 頁尾 -->
+  <div id="footer-layout"></div>
+  <script src="footer-layout.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <script src="productlist.js"></script>
+  <script>
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParamId = urlParams.get('id');
+    let get_productDetail_element = document.getElementById('productDetail');
+    let productDetail_content = `
+          <!-- 商品區塊 -->
+        <div class="row">
+          <!-- 左側圖片區 -->
+          <div class="col-md-6">
+            <!-- 大圖片 -->
+            <div class="mb-3" id="main-image-container">
+              <img id="main-image" src="images/product/product${myParamId}/a.jpg" class="img-fluid rounded border" alt="商品大圖">
+            </div>
+            <!-- 小圖片列表 -->
+            <div class="d-flex gap-2 m-3">
+              <a href="javascript:;" class="zoom">
+                <img src="images/product/product${myParamId}/a.jpg" class="img-thumbnail" id="img-thumbnail-1" alt="小圖片1" >
+              </a>
+              <a href="javascript:;" class="zoom">
+                <img src="images/product/product${myParamId}/b.jpg" class="img-thumbnail" id="img-thumbnail-2" alt="小圖片2">
+              </a>
+              <a href="javascript:;" class="zoom">
+                <img src="images/product/product${myParamId}/c.jpg" class="img-thumbnail" id="img-thumbnail-3" alt="小圖片3">
+              </a>
+            </div>
+          </div>
+
+          <!-- 右側介紹區 -->
+          <div class="col-md-6">
+            <h1 class="display-5">${product[myParamId - 1]['productName']}</h1>
+            <p class="text-muted">商品型號: #${product[myParamId - 1]['spec']}</p>
+            <p class="lead">${product[myParamId - 1]['description']}</p>
+            <h4 class="text-danger">NT$ ${product[myParamId - 1]['price']}</h4>
+            <div class="my-3">
+              <button class="btn btn-primary btn-lg">Buy it</button>
+              <button class="btn btn-outline-secondary btn-lg">Enter to Cart</button>
+            </div>
+          </div>
+        </div>
+          `;
+
+    get_productDetail_element.innerHTML = productDetail_content;
+
+
+    const getRandomInteger = (min, max) => {
+      min = Math.ceil(min)
+      max = Math.floor(max)
+
+      return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+    let related_container_content = ``;
+    let map = new Map();
+    // console.log(typeof(myParamId));
+    for (let i = 1; i <= 4; i++) {
+      let get_number = getRandomInteger(1, product.length);
+      // console.log(get_number);
+
+      // check similar id
+      checkSame = true;
+      while (checkSame) {
+        get_number = checkLoop(get_number);
+        checkSame = false;
+      }
+      function checkLoop(get_number_parameter) {
+        if(get_number_parameter == myParamId)
+      {
+        get_number = getRandomInteger(1, product.length);
+            checkLoop(get_number);
+      }
+        for (let j = 1; j <= map.size; j++) {
+          if (get_number_parameter === map.get(`${j}`)) {
+            // console.log(get_number_parameter == myParamId)
+            // // console.log(`check my param = ${myParamId} === ${get_number_parameter}`)
+            // console.log(`${get_number_parameter} == ${map.get(`${j}`)}`);
+            get_number = getRandomInteger(1, product.length);
+            checkLoop(get_number);
+          }
+          // if(parseInt(get_number_parameter) === parseInt(myParamId)){
+          //   get_number = getRandomInteger(1, product.length - 1);
+          //   checkLoop(get_number);
+          // }
+        }
+        return get_number;
+      }
+
+      // console.log(`set ${i} and ${get_number}`);
+      map.set(`${i}`, get_number);
+
+
+      if (!(myParamId == product[get_number-1]['id'])) {
+        related_container_content += `<div class="col-md-3 card-container">
+                <div class="card h-100 bg-white rounded" style="opacity:0.85">
+                <img src="${product[get_number-1]['image'][0]}" class="card-img-top" alt="相關商品1">
+                <div class="card-body">
+                  <h5 class="card-title">${product[get_number-1]['productName']}</h5>
+                  <p class="card-text">NT$ ${product[get_number-1]['price']}</p>
+                  <a href="productpage.html?id=${product[get_number-1]['id']}" class="btn btn-sm btn-outline-primary">Look For It</a>
+                </div>
+              </div>
+            </div>`;
+      }
+    }
+    document.getElementById('related_container').innerHTML = related_container_content;
+
+
+
+
+
+
+    // Make Magnifier Zoom
+    function magnify(imgID, zoom) {
+      let img = document.getElementById(imgID);
+
+      let glass = document.createElement("div");
+      glass.setAttribute('class', 'img-magnifier-glass');
+
+      img.parentElement.insertBefore(glass, img);
+
+      glass.style.backgroundImage = "url('" + img.src + "')";
+      glass.style.backgroundRepeat = "no-repeat";
+      glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+      let bw = 3;
+      let w = glass.offsetWidth / 2;
+      let h = glass.offsetWidth / 2;
+
+      glass.addEventListener("mousemove", moveMagnifier);
+      img.addEventListener("mousemove", moveMagnifier);
+
+      glass.addEventListener("touchmove", moveMagnifier);
+      img.addEventListener("touchmove", moveMagnifier);
+
+
+
+
+
+
+
+      function moveMagnifier(e) {
+        e.preventDefault();
+
+        let pos = getCursorPos(e);
+        x = pos.x;
+        y = pos.y;
+
+        if (x > img.width - (w / zoom)) { x = img.width - (w / zoom); }
+        if (x < w / zoom) { x = w / zoom; }
+        if (y > img.height - (h / zoom)) { y = img.height - (h / zoom); }
+        if (y < h / zoom) { y = h / zoom; }
+
+        glass.style.left = (x - w) + "px";
+        glass.style.top = (y - h) + "px";
+
+        glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+
+      }
+
+      function getCursorPos(e) {
+        var a, x = 0, y = 0;
+        e = e || window.event;
+        a = img.getBoundingClientRect();
+        x = e.pageX - a.left;
+        y = e.pageY - a.top;
+        x = x - window.pageXOffset;
+        y = y - window.pageYOffset;
+        return { x: x, y: y };
+      }
+    }
+
+
+  </script>
+  <script>
+    for (let i = 1; i < 4; i++) {
+      let old_image = document.getElementById('img-thumbnail-' + i).getAttribute('src');
+      document.getElementById('img-thumbnail-' + i).addEventListener('click', function (a) {
+        document.getElementById('main-image').setAttribute('src', old_image);
+        let getMainImage = document.getElementById('main-image').getAttribute('src');
+        document.querySelector(".img-magnifier-glass").style.backgroundImage = "url('" + getMainImage + "')";
+      })
+    }
+  </script>
+  <script>
+    $('#main-image-container').hover(function () {
+      magnify("main-image", 3);
+    }, function () {
+      $('#main-image-container').children('div')[0].remove();
+    });
+  </script>
+</body>
+
+</html>
