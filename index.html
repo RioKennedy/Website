@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>首頁</title>
+
+  <!-- 引入 Bootstrap 5 的 CSS -->
+  <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+
+  <style type="text/css">
+    .carousel-item img {
+      aspect-ratio: 2/1;
+      /*圖片比例:2:1*/
+      object-fit: cover;
+      height: 85vh;
+      /* 調整此高度 */
+
+    }
+
+    #caption {
+      text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+    }
+
+    .stroke {
+      text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 red, 2px 2px 0 blue;
+      box-shadow: 10px 10px 5px #c9e511;
+
+    }
+
+    body {
+      background: -webkit-gradient(linear, left top, left bottom, from(#f0f806), to(#00a8fc)) fixed;
+    }
+
+    h2#shopping:hover{
+       font-size: 5.1vmax!important;
+       background-color: rgba(219, 238, 72, 0.366)!important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="nav-layout">
+
+  </div>
+
+  <!-- 有文字 -->
+
+  <div id="carouselExampleCaptions" class="carousel w-100 slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/home/iphone16.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption h-25">
+          <p class=" bg-info bg-opacity-25 fw-bold d-inline rounded-pill p-5 border border-white border-3"
+            style="color: #9cb1f8;font-size: 23px;" id="caption">Welcome To Rio Store</p>
+          <!-- <p class="bg-dark" style="--bs-bg-opacity: .5;">This website will give you information about latest news.</p> -->
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/home/samsungzfold6.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption h-75">
+          <p class=" bg-info bg-opacity-50 fw-bold d-inline rounded-pill p-5 border border-white border-3 "
+            style="color: #9cb1f8; font-size: 25px; position: relative; bottom: 8vh;" id="caption">We sell 3C Product
+          </p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="images/home/gadget.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-flex  flex-column h-100 align-items-center justify-content-center bottom-0">
+          <p class=" bg-info bg-opacity-50 fw-bold d-inline rounded-pill p-5 border border-white border-3 "
+            style="color: #9cb1f8; font-size: 25px; position: relative; bottom: 8vh;" id="caption">And provide news
+            about new gadget.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="row justify-content-center">
+    <h2 class="my-5 col-9 text-center py-5 stroke text-white border rounded-pill border-warning bg-dark bg-opacity-10"
+      style="font-size:5vmax;">Only the Best: Our Brand Partnerships</h2>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/apple.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/huawei.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/jbl.svg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4 ">
+      <img class="d-block mx-auto" src="images/home/slide_two/lg.webp" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/xiaomi.png" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/samsung.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/sony.avif" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/dell.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/hp.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/lenovo.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/acer.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/asus.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/oppo.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/vivo.png" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+    </div>
+    <div class="col-lg-2 col-md-3 col-4">
+      <img class="d-block mx-auto" src="images/home/slide_two/nokia.jpg" alt="" style="height: 15vw;width: 15vw;">
+    </div>
+  </div>
+
+  <a href="product.html" style="text-decoration: none;">
+    <div class="row justify-content-center">
+      <h2 class="my-5 col-9 text-center py-5 stroke text-white border rounded-pill border-warning bg-dark bg-opacity-10"
+        style="font-size:5vmax;" id="shopping">Shopping Now</h2>
+    </div>
+  </a>
+
+
+
+
+  <!-- <div class="container my-5">
+      <h3>最新消息</h3>
+      <div class="row" id="new_focus">
+        <div class="col-4">
+          <div class="card h-100">
+            <img src="images/foguangshan.jpg" class="card-img-top judul-card" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">佛光山</h5>
+              <p class="card-text">Fo Guang Shan has a 4-hall main building and thousands of holy statues, and large and small halls of the Buddha which extend across the mountain. Solemn and forceful, with an imposing atmosphere, it is an important centre of faith in Taiwanese Buddhism.</p>
+              <a href="news.html?title=佛光山" class="btn btn-primary tombol-goto">News About Place</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card h-100">
+            <img src="images/hehuanshan.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title judul-card">合歡山</h5>
+              <p class="card-text">Hehuanshan, also known as Joy Mountain, is a mountain range in central Taiwan that's a popular destination for hiking and exploring:</p>
+              <a href="news.html?title=合歡山" class="btn btn-primary tombol-goto">News About Place</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card h-100">
+            <img src="images/gaomei.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title judul-card">高美濕地</h5>
+              <p class="card-text">Gaomei Wetlands is one of the few places that have wild ducks. Despite the small area, Gaomei Wetlands have special soils mixed with mud and sand..</p>
+              <a href="news.html?title=高美濕地" class="btn btn-primary tombol-goto">News About Place</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  <!-- 頁尾 -->
+  <div id="footer-layout"></div>
+  <script src="footer-layout.js"></script>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- <script>
+      const get_news_nav = document.getElementById("new_nav");
+      const get_new_focus = document.getElementById("new_focus"); 
+      get_news_nav.addEventListener('click',()=>
+      {
+        get_new_focus.scrollIntoView();
+      })
+    </script> -->
+  <script src="nav_layout.js"></script>
+
+</body>
+
+</html>

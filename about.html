@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>最新消息</title>
+
+  <!-- 引入 Bootstrap 5 的 CSS -->
+  <link rel="stylesheet" href="bootstrap-5/css/bootstrap.min.css">
+
+  <style type="text/css">
+    .carousel-item img {
+      aspect-ratio: 2/1;
+      /*圖片比例:2:1*/
+      object-fit: cover;
+      height: 700px;
+      /* 調整此高度 */
+
+    }
+
+    .card-img-top {
+      height: 50vh;
+    }
+
+    #beranda {
+      background-image: url("images/about-background.jpg");
+      opacity: 0.5;
+    }
+
+    p#about {
+      text-indent: 50px;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    body {
+      background: -webkit-gradient(linear, left top, left bottom, from(#f0f806), to(#00a8fc)) fixed;
+    }
+
+    h1{
+      color: white;
+      text-shadow: 1px 1px 2px red, 0 0 1em rgb(0, 0, 0), 0 0 0.2em rgb(0, 0, 0);
+      font-family :Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+
+    #caption {
+      text-shadow: -2px -2px 0 rgb(22, 22, 40), 2px -2px 0 rgb(151, 151, 225), -2px 2px 0 black, 2px 2px 0 rgb(151, 151, 225);
+    }
+
+    @keyframes slide {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.2);
+
+    }
+
+    #moving-card-slide {
+      white-space: nowrap;
+
+      animation: 15s slide infinite linear;
+    }
+
+    .profile {
+      margin-right: 0.75%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    #moving-card{
+      overflow: hidden;
+      position: relative;
+    }
+
+    #moving-card:hover #moving-card-slide{
+      animation-play-state: paused;
+    }
+
+    #moving-card:before,#moving-card:after{
+      position: absolute;
+      top: 0;
+      width: 250px;
+      height: 100%;
+      content: "";
+      z-index: 2;
+    }
+
+    #moving-card:before{
+      left: 0;
+      background: linear-gradient(to right,rgba(0, 0, 0, 0.715),rgba(255, 255, 255, 0));
+    }
+
+    #moving-card:after{
+      right: 0;
+      background: linear-gradient(to left,rgb(0, 0, 0,0.715),rgb(255,255,255,0));
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <div id="nav-layout">
+
+  </div>
+  <script src="nav_layout.js"></script>
+
+
+  <!-- Hero 區塊 -->
+  <div class="bg-primary text-white text-center py-5 rounded-pill mx-auto" style="width: 90vw;" id="beranda">
+    <div class="container" style="font-weight: bold;" id="caption">
+      <h1 class="display-4">About Rio Store</h1><br>
+      <p><i>Your One-Stop Shop for the Latest Tech</i></p>
+    </div>
+  </div>
+
+  <!-- 關於我們內容 -->
+  <div class="row g-4 my-5 mx-1">
+    <!-- 公司介紹 -->
+    <div class="col-lg-1"></div>
+    <div class="col-lg-1  d-flex align-items-center my-auto">
+      <h1 class="text-white">Who We Are</h1>
+    </div>
+    <div class="vr p-0"></div>
+    <div class="col-lg-4  d-flex align-items-center">
+      <p id="about" class="mt-5 text-white"><b><u>Welcome to Rio Store!</u></b> We're a local store based in Taiwan,
+        dedicated to
+        bringing you the latest and coolest tech gadgets. Whether you're looking for smart devices, accessories, or
+        everyday tech, we've got something for everyone.<br><br>
+
+        Our goal is simple: to offer high-quality products that make life easier and more fun. We carefully select the
+        best gadgets so you can enjoy the latest technology at great prices.<br><br>
+
+        At Rio Store, we’re passionate about tech and committed to providing great customer service. Thanks for shopping
+        with us!
+
+
+      </p>
+    </div>
+    <!-- 圖片 -->
+    <div class="col-lg-5 d-flex justify-content-center my-auto">
+      <img src="logo/store-logo.gif" alt="公司圖片" class="img-fluid rounded-pill" style="width: 30vw; height: 30vh;">
+    </div>
+    <div class="col-lg-1"></div>
+
+  </div>
+
+  <div class="row g-4 my-5">
+    <!-- 公司介紹 -->
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5 d-flex align-items-center justify-content-center">
+      <img src="images/about/about-brand.jpg" alt="公司圖片" class="img-fluid rounded-pill" style="width: 30vw; height: 30vh;">
+    </div>
+    <div class="col-lg-4">
+      <h1 class="text-white" style="text-align: center;">What We Offer</h1>
+      <hr>
+      <p id="about" class="mt-5 text-white">
+        We offer premium gadgets from world-renowned brands, including:
+      <ul class="text-white">
+        <li>Laptops: Apple, Dell, HP, Lenovo, ASUS, MSI, and more</li>
+        <li>Smartphones: Apple, Samsung, Xiaomi, Motorola</li>
+        <li>Speakers: JBL, Bose, Sony, Ultimate Ears</li>
+        <li>Headsets: Beats, Sony, Bose, Logitech</li>
+      </ul>
+      </p>
+    </div>
+    <!-- 圖片 -->
+
+    <div class="col-lg-1"></div>
+
+  </div>
+
+  <div class="row g-4 my-5 mx-1">
+    <!-- 公司介紹 -->
+    <div class="col-lg-1"></div>
+    <div class="col-lg-5 align-items-center">
+      <h1 class="text-white" style="text-align: center;">Why Choose Us?</h1><br>
+      <p id="about" class="mt-5 text-white">
+        We offer premium gadgets from world-renowned brands, including:<br>
+      <ul class="text-white">
+        <li>Quality Selection: We offer a wide range of top-rated products across computers, electronics, and communication devices.</li>
+        <li>Competitive Prices: Get the best deals without compromising on quality.</li>
+        <li>Customer-Centric Service: Our dedicated team is here to assist you with expert advice and exceptional support.</li>
+        <li>Fast Shipping: Enjoy quick delivery and secure packaging for all orders.</li>
+      </ul>
+      </p>
+    </div>
+    <!-- 圖片 -->
+    <div class="col-lg-5 d-flex justify-content-center my-auto">
+      <img src="images/about/why-choose-us.jpg" alt="公司圖片" class="img-fluid rounded-pill" style="width: 30vw; height: 30vh;">
+    </div>
+    <div class="col-lg-1"></div>
+
+  </div>
+
+
+  <!-- 團隊成員 -->
+  <div class=" py-5">
+    <div class="container text-center">
+      <h2>Our Team</h2>
+      <p>"Our dedicated team at <b>Rio Store</b> works together to deliver exceptional products and service."</p>
+      <div id="moving-card" class="d-flex">
+        <div class="g-4 d-flex" id="moving-card-slide">
+          <div class="col card h-100 profile" style="width: 35vw;">
+            <img src="images/team/a01.jpg" class="card-img-top" alt="成員照片">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size: 2vw;">Rio Kennedy</h5>
+              <p class="card-text" style="font-size: 1vw;">Store Owner / Manager.</p>
+            </div>
+          </div>
+          <div class="col card h-100 profile" style="width: 35vw;">
+            <img src="images/team/a02.jpg" class="card-img-top" alt="成員照片">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size: 2vw;">Marchellya Sandra Genia</h5>
+              <p class="card-text" style="font-size: 1vw;">Public Relations Specialist.</p>
+            </div>
+          </div>
+          <div class="col card h-100 profile" style="width: 35vw;">
+            <img src="images/team/a03.jpg" class="card-img-top" alt="成員照片">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size: 2vw;">Aldo Beckham</h5>
+              <p class="card-text" style="font-size: 1vw;">Content Creator.</p>
+            </div>
+          </div>
+          <div class="col card h-100 profile" style="width: 35vw;">
+            <img src="images/team/a04.jpg" class="card-img-top" alt="成員照片">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size: 2vw;">Bella Alexandria</h5>
+              <p class="card-text" style="font-size: 1vw;">E-Commerce & Customer Service Specialist.</p>
+            </div>
+          </div>
+          <div class="col card h-100 profile" style="width: 35vw;">
+            <img src="images/team/a05.jpg" class="card-img-top" alt="成員照片">
+            <div class="card-body">
+              <h5 class="card-title" style="font-size: 2vw;">Shelsha</h5>
+              <p class="card-text" style="font-size: 1vw;">Marketing & Social Media Manager.</p>
+            </div>
+          </div>
+        </div>     
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 頁尾 -->
+  <div id="footer-layout">
+
+  </div>
+  <script src="footer-layout.js"></script>
+
+  <script>
+    let copy = document.querySelector("#moving-card-slide").cloneNode(true);
+    document.querySelector('#moving-card').appendChild(copy);
+    document.querySelector('#moving-card').appendChild(copy);
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
